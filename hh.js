@@ -71,8 +71,17 @@ runTasks = async () => {
         withCoverLetter.push({ title: jobTitle, href: jobHref })
       }
 
+      const differentСountry = document.querySelector('[data-qa=relocation-warning-confirm]') 
 
-      document.querySelector('.bloko-modal-footer .bloko-button_kind-primary').click()
+      if (differentСountry) {
+          differentСountry.click()
+      }
+        await wait(1111)
+
+      if (document.querySelector('.bloko-modal-footer .bloko-button_kind-primary')) {
+          document.querySelector('.bloko-modal-footer .bloko-button_kind-primary').click()
+      }  
+      
 
       await wait(1111)
 
